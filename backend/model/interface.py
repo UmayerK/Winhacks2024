@@ -11,7 +11,9 @@ class Interface():
             output_hidden_states = False,
         )
         self.tokenizer = BertTokenizer.from_pretrained("bert-base-uncased", do_lower_case=True)
-        self.model.load_state_dict(torch.load("./model/model.pt"))
+        self.model.load_state_dict(torch.load("./model/model.pt"
+                                              #, map_location=torch.device('cpu')
+                                              ))
 
     def check_message(self, message):
         """Returns a prediction for the message"""
@@ -25,5 +27,5 @@ class Interface():
             return_tensors = 'pt',        # Return pytorch tensors.
         )
         score = self.model(encoded_dict['input_ids'], token_type_ids=None, attention_mask=encoded_dict['attention_mask'])[0][0]
-        probabilities = tuple(torch.sigmoid(score).detach().numpy())
+        probabilities = tuple([float(x) for x in torch.sigmoid(score).detach().numpy()])
         return probabilities
