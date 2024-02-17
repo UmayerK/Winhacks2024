@@ -1,19 +1,13 @@
 import React, { useState } from 'react';
+import getRating from './api';
 
 function TextBox() {
   const [inputText, setInputText] = useState(""); // State to store input text
 
-  const exportFunction = () => {
-    // Function to handle exporting the text
-    alert("Works");
-    // Replace this alert with your desired functionality
-  };
-
-  const handleSubmit = () => {
-    // Call the export function
-    return 0.5;
-    
-    exportFunction();
+  const handleSubmit = () => {    
+    alert('You entered: ' + inputText);
+    return;
+    getRating(inputText); // Call the getRating function from the API file (api.js)
   };
 
   const handleChange = (event) => {

@@ -1,6 +1,5 @@
 import React from 'react';
 import Form from './Textbox.js'; // Importing the Form component
-import Analysus from './Analysis.js'
 
 function App() {
   return (
