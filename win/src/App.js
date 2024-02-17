@@ -1,5 +1,6 @@
 import React from 'react';
 import Form from './Textbox.js'; // Importing the Form component
+import Posts from './Posts'; 
 
 function App() {
   return (
@@ -9,6 +10,7 @@ function App() {
         {/* Apply the gradient classes and specify gradient colors */}
        
         <Form /> {/* Rendering the Form component */}
+        <Posts />
       </header>
     </div>
   );

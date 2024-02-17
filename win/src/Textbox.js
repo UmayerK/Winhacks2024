@@ -24,12 +24,12 @@ function TextBox() {
   };
 
   return (
-    <div className="text-3xl font-bold flex flex-col items-center justify-center mb-[400px]">
+    <div className="text-3xl font-bold flex flex-col  justify-center ">
       <form className="font-bold flex flex-col items-center relative">
         <textarea 
           id="textbox" 
           name="textbox" 
-          className="text-black w-[512px] h-[256px] text-md font-normal resize-none mb-2" // Disable resizing
+          className="text-black w-[512px] h-[256px] text-md font-normal resize-none mb-4" // Disable resizing
           value={inputText} 
           onChange={handleChange} // Call handleChange function when the input value changes
           onKeyPress={handleKeyPress} // Call handleKeyPress function when a key is pressed
@@ -40,7 +40,7 @@ function TextBox() {
           className="absolute bottom-0 right-0 bg-blue-500 hover:bg-blue-400 text-white font-bold py-2 px-4 border-b-4 border-blue-700 hover:border-blue-500 rounded mb-5 mr-5"
           onClick={handleSubmit} // Call handleSubmit function when the button is clicked
         >
-          Button
+          Scan
         </button>
       </form>
     </div>
