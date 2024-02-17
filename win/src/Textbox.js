@@ -1,5 +1,6 @@
 import React, { useState } from 'react';
 
+
 function TextBox() {
   const [inputText, setInputText] = useState(""); // State to store input text
 
@@ -15,14 +16,14 @@ function TextBox() {
   };
 
   return (
-    <div className="text-3xl font-bold flex flex-col items-center justify-center mt-80  text-white">
+    <div className="text-3xl font-bold flex flex-col items-center justify-center mt-[100px] ">
       <form className="font-bold flex flex-col items-center">
-        <label htmlFor="textbox" className="mb-2 font-bold text-white ">Enter your text:</label>
+        <label htmlFor="textbox" className="mb-2 font-bold">Enter your text:</label>
         <input 
           type="text" 
           id="textbox" 
           name="textbox" 
-          className="mb-2" 
+          className=" text-black w-[512px] h-[256px] text-md font-normal "  
           value={inputText} 
           onChange={(e) => setInputText(e.target.value)} // Update input text state
         />
