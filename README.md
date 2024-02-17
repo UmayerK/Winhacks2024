@@ -1,2 +1,2 @@
 # Winhacks2024
-Our project lol
+Our project
