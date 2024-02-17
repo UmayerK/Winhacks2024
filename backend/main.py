@@ -20,7 +20,7 @@ class PostData(BaseModel):
 
 def analyze_text(text: str) -> float:
     # text analysis logic here
-    result = interface(text)
+    result = interface.check_message(text)
     not_scam = result[0]
     scam = result[1]
     if scam > not_scam:

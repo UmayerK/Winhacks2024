@@ -11,7 +11,9 @@ class Interface():
             output_hidden_states = False,
         )
         self.tokenizer = BertTokenizer.from_pretrained("bert-base-uncased", do_lower_case=True)
-        self.model.load_state_dict(torch.load("./model/model.pt"))
+        self.model.load_state_dict(torch.load("./model/model.pt"
+                                              #, map_location=torch.device('cpu')
+                                              ))
 
     def check_message(self, message):
         """Returns a prediction for the message"""
