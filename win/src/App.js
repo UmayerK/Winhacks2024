@@ -1,13 +1,11 @@
 import React from 'react';
-import './App.css'; // Importing your main CSS file
-import './form.css'; // Importing the CSS file for the Form component
 import Form from './Textbox.js'; // Importing the Form component
 
 function App() {
   return (
-    <div className="App">
-      <header className="App-header">
-        <p>Penis</p>
+    <div className="flex items-center flex-col text-red-700">
+      <header className="">
+        <p className="text-sm">Penis</p>
         <Form /> 
 
       </header>
