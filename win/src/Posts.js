@@ -5,7 +5,8 @@ function Posts() {
     {
       id: 1,
       text: "F",
-      scamLikelihood: .5
+      scamLikelihood: .5,
+      likes: 10,
     }
   ]);
 
@@ -19,12 +20,12 @@ function Posts() {
 
 
   return (
-    <div className="max-w-lg relative ">
+    <div className="max-w-lg relative transform translate-y-[250px]">
       {posts.map(post => (
         <div key={post.id}>
           <textarea
             placeholder="Posts Appear Here"
-            className="w-full h-32 border border-gray-300 rounded-lg" // Added pl-8 for padding-left
+            className="w-[101%] h-32 border border-gray-300 rounded-lg" // Added pl-8 for padding-left
             readOnly // Make the textarea read-only
           />
           {/* Heart icon */}
@@ -41,10 +42,10 @@ function Posts() {
             69
           </span>
           {/* Scam likelihood bar */}
-          <div className="mt-1">
-            <div className="w-full h-6 bg-gray-200 rounded-lg overflow-hidden">
+          <div className="mt-2 mb-4 w-[37vw]  ">
+            <div className="w-full h-6 bg-gray-200 rounded-lg overflow-hidden ">
               <div
-                className="h-full bg-red-500"
+                className="h-full bg-red-500 w-[100%]"
                 style={{ width: `${post.scamLikelihood}%` }}
               ></div>
             </div>
