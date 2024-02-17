@@ -1,6 +1,7 @@
 from fastapi import FastAPI
 from fastapi.middleware.cors import CORSMiddleware
 from pydantic import BaseModel
+from model.interface import Interface
 
 
 app = FastAPI()
@@ -12,12 +13,20 @@ app.add_middleware(
     allow_headers=["*"],
 )
 
+interface = Interface()
+
 class PostData(BaseModel):
     text: str
 
 def analyze_text(text: str) -> float:
     # text analysis logic here
-    return 0.75
+    result = interface(text)
+    not_scam = result[0]
+    scam = result[1]
+    if scam > not_scam:
+        return scam
+    else:
+        return 1 - not_scam
 
 @app.post("/analyze")
 def analyze_post_data(post_data: PostData):
