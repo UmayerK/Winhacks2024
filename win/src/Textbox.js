@@ -23,7 +23,7 @@ function TextBox({setPosts}) {
         />
 
         <button 
-          className="bg-blue-500 hover:bg-blue-400 text-white font-bold py-2 px-4 mt-4 border-blue-700 hover:border-blue-500 rounded-lg"
+          className="bg-indigo-600 hover:bg-indigo-500 text-white font-bold py-3 px-6 text-2xl mt-4 rounded-lg"
           onClick={(event) => {event.preventDefault(); handleSubmit()}} // Call handleSubmit function when the button is clicked
         >
           Post

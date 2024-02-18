@@ -8,7 +8,7 @@ function Posts({ posts, setPosts }) {
   };
 
   return (
-    <div className="w-[512px] translate-y-[500px] mt-[4%] ">
+    <div className="w-[512px] mt-[600px] mb-16">
       {posts.map((post, index) => (
         <div key={index} className="rounded-lg bg-white shadow-md p-4 mb-4">
           <div className="w-[101%] text-black text-lg rounded-lg text-left">

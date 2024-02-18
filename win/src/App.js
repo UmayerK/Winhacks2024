@@ -1,26 +1,29 @@
 import React from 'react';
 import Form from './Textbox.js'; // Importing the Form component
 import Posts from './Posts'; 
-import './styles.css';
-import Button from './Button';
 import Nav from './Nav.js'
+import Home from './Home.js'
 import { useState } from 'react';
+
+// Import the background image
+import backgroundImage from './bg.jpg';
 
 function App() {
   const [posts, setPosts] = useState([]);
+  const [homePage, setHomePage] = useState(true);
+  
   return (
-    <div className="bg-gradient-to-r from-purple-900 to-black min-h-screen flex flex-col">
-      {/* Nav component rendered outside the gradient container */}
-      <Nav />
-      
-      {/* Apply the gradient background to the content container */}
+    // Set the background image using inline CSS
+    <div className="min-h-screen flex flex-col" style={{ backgroundImage: `url(${backgroundImage})`, backgroundSize: 'cover', backgroundAttachment: 'fixed' }}>
+      <Nav homePage={homePage} setHomePage={setHomePage} />
+      { homePage ? (<Home/>) : (
       <div className="flex-1 text-white text-center">
-        {/* Content */}
-        <section className="flex flex-col items-center justify-center h-full">
+        <div className="flex flex-col items-center justify-center h-full">
           <Form setPosts={setPosts}/>
           <Posts posts={posts} setPosts={setPosts}/>
-        </section>
-      </div>
+        </div>
+      </div>)
+      }
     </div>
   );
 }

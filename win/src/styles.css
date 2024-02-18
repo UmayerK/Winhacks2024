@@ -1,4 +1,0 @@
-/* styles.css */
-body, html {
-    @apply bg-gradient-to-r from-purple-900 to-black min-h-screen;
-  }
