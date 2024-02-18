@@ -20,8 +20,8 @@ function Posts() {
 
 
   return (
-    <div className="max-w-lg relative transform translate-y-[250px]">
-      {posts.map(post => (
+    <div className="max-w-lg relative transform translate-y-[250px] mt-[4%] ">
+      {posts.map(post => ( 
         <div key={post.id}>
           <textarea
             placeholder="Posts Appear Here"
@@ -30,7 +30,7 @@ function Posts() {
           />
           {/* Heart icon */}
           <span
-            className={`absolute left-2 top-2/4 transform  text-xl mt-5 ${
+            className={`absolute left-2 top-2/4 transform  text-xl mt-4 ${
               post.liked ? "text-red-500" : "text-gray-500"
             } cursor-pointer`}
             onClick={() => handleLikeClick(post.id)}
@@ -38,11 +38,11 @@ function Posts() {
             ❤️
           </span>
           {/* Number next to heart */}
-          <span className="absolute left-7 top-2/4 transform  text-sm text-gray-500 mt-6 ml-1 ">
+          <span className="absolute left-7 top-2/4 transform  text-sm text-gray-500 mt-5 ml-1 ">
             69
           </span>
           {/* Scam likelihood bar */}
-          <div className="mt-2 mb-4 w-[37vw]  ">
+          <div className="mb-2 mb-4 w-[37vw]  ">
             <div className="w-full h-6 bg-gray-200 rounded-lg overflow-hidden ">
               <div
                 className="h-full bg-red-500 w-[100%]"

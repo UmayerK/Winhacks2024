@@ -24,7 +24,7 @@ function TextBox() {
   };
 
   return (
-    <div className="text-3xl font-bold flex flex-col justify-center absolute top-0 left-0 right-0">
+    <div className="text-3xl font-bold flex flex-col justify-center absolute top-0 left-0 right-0 mt-4">
       <form className="font-bold flex flex-col items-center relative">
         <textarea 
           id="textbox" 
