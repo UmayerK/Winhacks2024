@@ -1,4 +1,4 @@
-const getRating = (postStr) => {
+const getRating = (postStr, setPosts) => {
   // Make the POST request
   fetch('http://127.0.0.1:8000/analyze',
   {
@@ -17,9 +17,16 @@ const getRating = (postStr) => {
       }
     })
   .then((data) => {
-    /* THIS IS WHERE YOU RENDER THE RESPONSE DATA */
-    const responseDataString = JSON.stringify(data);
-    alert(responseDataString);
+    setPosts(prevPosts => {
+      return [
+        ...prevPosts,
+        {
+          text: postStr,
+          rating: data.rating * 100,
+          liked: false,
+        }
+      ];
+    })
   })
   .catch((error) => {
     // Log any errors
